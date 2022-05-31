@@ -1,0 +1,46 @@
+<%- include('header') -%>
+    <title>Profile</title>
+  </head>
+  <body>
+    <%- include('navbar') -%>
+      </nav>
+      <br/>
+    <h1 class="text-center"><%= player.name %>        <a href="/profile/edit:<%= player.name %>" class="btn btn-outline-dark btn-long btn-center">Edit Profile</a></h1>
+    
+    <br/>
+    <br/>
+    <br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped table-bordered">
+                    <tr>
+                        <th>
+                            Best score
+                        </th>
+                        <th>
+                            Average score
+                        </th>
+                        <th>
+                            Games played
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <%= player.highscore%>
+                        </td>
+                        <td>
+                            <%= player.averagescore%>
+                        </td>
+                        <td>
+                            <%= player.gamesplayed%>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br/>
+     <%- include('scripts') -%>
+    </body>
+</html>

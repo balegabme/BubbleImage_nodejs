@@ -1,0 +1,51 @@
+<%- include('header') -%>
+<title>Login</title>
+</head>
+
+<body>
+  <%- include('navbar') -%>
+  <div class="container-fluid full-height ">
+
+    <div class="row full-height d-flex justify-content-center">
+
+        <div class="col-md-6 align-self-center">
+
+          <div class="card login-card align-self-center">
+            <div class="card-body">
+              <h2 class="card-title text-center">Welcome</h2>
+            
+                <form action="/login" method="POST">
+                  
+                  <div class="form-group">
+                      <label for="username">Username</label>
+                      <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+                  </div>
+                  <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <small class="form-text"><button id="forgottenpassword" type="button" class="text-muted btn btn-link" onClick="location.replace('forgottenpassword');">Forgotten password.</button></small>
+                  </div>
+                  <% if (typeof error !== 'undefined') { %>
+                  <div class="form-group">
+                    <small class="form-text text-danger"><%= error %></small>
+                  </div>
+                  <% } %>
+                  <button id="login" type="submit" class="btn btn-dark btn-block">Login</button>
+                  <button id="register" type="button" class="btn btn-dark btn-block" onClick="location.replace('register');">Registration</button>
+          
+                </form>
+
+            </div>
+          </div>
+          
+    </div>
+
+
+</div>
+
+  <%- include('scripts') -%>
+</body>
+
+</html>

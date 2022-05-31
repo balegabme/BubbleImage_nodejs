@@ -1,0 +1,45 @@
+<%- include('header') -%>
+<title>Leaderboard</title>
+</head>
+
+<body>
+    <%- include('navbar') -%>
+    </nav>
+    <br />
+    <h1 class="text-center">Leaderboard</h1>
+    <br />
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>
+                                #
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Points
+                            </th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <% for(var i=0; i < highscores.length; i++) { if(i > 10) break; %>
+                    <tr class=<%= (highscores[i]._id === player._id) ? "table-primary" : "" %>>
+                        <td><%= i+1 %></td>
+                        <td><%= highscores[i].name %></td>
+                        <td><%= highscores[i].highscore %></td>
+                    </tr>
+                    <% } %>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <%- include('scripts') -%>
+</body>
+
+</html>
